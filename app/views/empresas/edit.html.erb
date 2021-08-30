@@ -1,0 +1,7 @@
+<h1>Editar: <%= @empresa.nome %></h1>
+
+
+<div class="container">
+  <%= render partial:'form', locals:{ empresa: @empresa, action_text:'Editar' } %>
+  <%= link_to 'Voltar', @empresa, class:'btn btn-primary' %>
+</div>

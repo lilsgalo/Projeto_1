@@ -1,0 +1,8 @@
+<h1>Cadastrar nova empresa</h1>
+<br>
+
+
+<div class="container">
+  <%= render partial:'form', locals:{ empresa: @empresa, action_text:'Criar' } %>
+  <%= link_to 'Voltar', empresas_path, class: 'btn btn-primary'%>
+</div>

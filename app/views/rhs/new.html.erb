@@ -1,0 +1,9 @@
+<h1><%= @empresa.nome %></h1>
+<h3>Registrando novo RH</h3>
+<br>
+
+
+<div class="container">
+  <%= render partial:'form', locals: { empresa: @empresa, action_text:"Registrar" } %>
+  <%= link_to 'Voltar', @empresa, class: 'btn btn-primary'%>
+</div>

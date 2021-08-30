@@ -1,0 +1,9 @@
+<h1><%= @empresa.nome %></h1>
+<h3>Cadastrar novo projeto</h3>
+<br>
+
+
+<div class="container">
+  <%= render partial:'form', locals:{ empresa: @empresa, action_text:'Criar' } %>
+  <%= link_to 'Voltar', @empresa, class: 'btn btn-primary'%>
+</div>

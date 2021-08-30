@@ -1,0 +1,38 @@
+<br>
+<% if flash[:notice] %>
+  <div class="alert alert-primary">
+    <h5><%= flash[:notice] %></h5>
+  </div>
+<% end %>
+
+
+<h1>Empresas</h1>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @empresas.each do |empresa| %>
+      <tr>
+        <td><%= empresa.nome %></td>
+        <td><%= empresa.email %></td>
+        <td><%= link_to 'Ver', empresa_path(empresa), class:"btn btn-primary" %></td>
+        <td><%# fazer aparecer o alert, ainda não tá funcionando %>
+          <%= button_to 'Apagar', empresa, method: :delete,
+            class:'btn btn-danger',
+            data: { confirm:'Tem certeza disso?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Criar nova empresa', new_empresa_path, class:"btn btn-primary" %>

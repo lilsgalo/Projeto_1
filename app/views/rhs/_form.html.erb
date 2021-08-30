@@ -1,0 +1,44 @@
+<% if @rh.errors.any? %>
+  <% @rh.errors.full_messages.each do |error| %>
+    <div class="alert alert-danger">
+        <h6><%= error %></h6>
+    </div>
+  <% end%>
+<% end %>
+
+<%= form_for [@empresa, @rh] do |form| %>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= form.label :nome %>
+        <%= form.text_field :nome, class:"form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= form.label :email %>
+        <%= form.text_field :email, class:"form-control", placeholder:"rh_empresa@email.com" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= form.label :cpf %>
+        <%= form.text_field :cpf, class:"form-control", placeholder:"000.000.000-00" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= form.label :telefone %>
+        <%= form.text_field :telefone, class:"form-control", placeholder:"(00)00000-0000" %>
+      </div>
+    </div>
+  </div>
+
+  <%= form.submit action_text, class:"btn btn-success" %>
+<% end %>
