@@ -1,5 +1,7 @@
 class EmpresasController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_empresa, only: %i[ show edit update destroy ]
+
 
   # GET /empresas or /empresas.json
   def index
@@ -63,6 +65,6 @@ class EmpresasController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def empresa_params
-    params.require(:empresa).permit(:nome, :cnpj, :email)
+    params.require(:empresa).permit(:nome, :cnpj, :email, :nome_contato, :email_contato)
   end
 end

@@ -35,5 +35,24 @@
   </div>
   <br>
 
+  <div class="row">
+    <div class="col-sm-5">
+      <div class="form-group">
+        <%= form.label :nome_contato, "Nome do contato" %>
+        <%= form.text_field :nome_contato, class:"form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-5">
+      <div class="form-group">
+        <%= form.label :email_contato, "Email do contato" %>
+        <%= form.text_field :email_contato, class:"form-control", placeholder:"contato@email.com" %>
+      </div>
+    </div>
+  </div>
+  <br>
+
   <%= form.submit action_text, class:"btn btn-success" %>
 <% end %>

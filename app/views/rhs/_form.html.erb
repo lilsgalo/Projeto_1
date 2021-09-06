@@ -39,6 +39,22 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= form.label :idade %>
+        <%= form.number_field :idade, class:"form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= form.label :escolaridade %>
+        <%= form.text_field :escolaridade, class:"form-control" %>
+      </div>
+    </div>
+  </div>
 
   <%= form.submit action_text, class:"btn btn-success" %>
 <% end %>

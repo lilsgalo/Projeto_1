@@ -1,13 +1,15 @@
 <h1><%= @empresa.nome %></h1>
 <h4>RH: <%= @rh.nome %> </h4>
 
-<div class="col-sm-8">
+<div class="col-sm-12">
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr>
         <th>Email</th>
         <th>Telefone</th>
         <th>CPF</th>
+        <th>Idade</th>
+        <th>Escolaridade</th>
       </tr>
     </thead>
 
@@ -16,6 +18,8 @@
           <td><%= @rh.email %></td>
           <td><%= @rh.telefone %></td>
           <td><%= @rh.cpf %></td>
+          <td><%= @rh.idade %></td>
+          <td><%= @rh.escolaridade %></td>
         </tr>
     </tbody>
   </table>

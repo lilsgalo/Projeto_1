@@ -1,5 +1,5 @@
 class RhsController < ApplicationController
-
+  before_action :authenticate_user!
   before_action :set_empresa
   before_action :set_rh, only: %i[ show edit update destroy ]
 
@@ -51,7 +51,7 @@ class RhsController < ApplicationController
   end
 
   def rh_params
-    params.require(:rh).permit(:nome, :cpf, :email, :telefone, @empresa)
+    params.require(:rh).permit(:nome, :cpf, :email, :telefone, :idade, :escolaridade, @empresa)
   end
 
   def set_empresa

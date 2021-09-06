@@ -1,4 +1,5 @@
 class ProjetosController < ApplicationController
+  before_action :authenticate_user!
   before_action :get_empresa
   before_action :set_projeto, only: %i[ show edit update destroy ]
 
@@ -51,7 +52,7 @@ class ProjetosController < ApplicationController
   end
 
   def projeto_params
-    params.require(:projeto).permit(:nome, :valor, @empresa)
+    params.require(:projeto).permit(:nome, :valor, :descricao, @empresa)
   end
 
   def get_empresa

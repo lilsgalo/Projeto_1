@@ -1,17 +1,10 @@
 <br>
-<% if flash[:notice] %>
-  <div class="alert alert-primary">
-    <h5><%= flash[:notice] %></h5>
-  </div>
-<% end %>
-
-
 <h1><%= @empresa.nome %></h1>
 <div class="col-sm-8">
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr>
-        <th>Email</th>
+        <th>Email da empresa</th>
         <th>CNPJ</th>
       </tr>
     </thead>
@@ -25,6 +18,24 @@
   </table>
 </div>
 
+<div class="col-sm-8">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Contato</th>
+        <th>Email do contato</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+          <td><%= @empresa.nome_contato %></td>
+          <td><%= @empresa.email_contato %></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
 
 <h2> Projetos </h2>
 <table class="table table-striped table-bordered table-hover">
@@ -32,6 +43,8 @@
     <tr>
       <th>Nome</th>
       <th>Valor</th>
+      <th>Descrição</th>
+      <th colspan="2">
     </tr>
   </thead>
 
@@ -40,6 +53,7 @@
       <tr>
         <td><%= projeto.nome %></td>
         <td><%= projeto.valor %></td>
+        <td><%= projeto.descricao %></td>
         <td><%= link_to "Editar", edit_empresa_projeto_path(@empresa, projeto), class:"btn btn-primary"%></td>
         <td><%= button_to "Apagar", [@empresa, projeto], method: :delete,
           class: "btn btn-danger",
@@ -56,7 +70,7 @@
     <tr>
       <th>Nome</th>
       <th>Email</th>
-      <th colspan="1">
+      <th colspan="3">
     </tr>
   </thead>
 
