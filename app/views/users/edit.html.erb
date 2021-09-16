@@ -1,0 +1,6 @@
+<h2>Editando: <%= @user.nome %></h2>
+<br>
+
+<div class="container">
+  <%= render partial:"form", locals: {user: @user, action_text:"Editar"} %>
+</div>

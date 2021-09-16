@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     resources :rhs
   end
 
-  resources :users, only: %i[ show ]
+  scope "/admin" do
+    resources :users
+  end
   
-  root to: "empresas#index"
+  root to: "home#index"
 end

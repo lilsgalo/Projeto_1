@@ -1,11 +1,3 @@
-<br>
-<div class="d-flex flex-row-reverse bd-highlight">
-  <%= button_to 'Sair', destroy_user_session_path, method: :delete, class:"btn btn-danger" %>
-  &nbsp;
-  <%= link_to 'Editar minha conta', edit_user_registration_path, class:"btn btn-info" %>
-</div>
-<br><h2> Bem-vindo(a), <%= current_user.nome %>! </h2><br>
-
 <h3>Empresas</h3>
 
 <table class="table table-striped table-bordered table-hover">
@@ -32,7 +24,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'Criar nova empresa', new_empresa_path, class:"btn btn-primary" %>
